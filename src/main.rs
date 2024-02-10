@@ -88,7 +88,7 @@ fn main() {
 
     let timeout = Duration::from_secs(5);
 
-    for _ in 0..10 {
+    for _ in 0..handles.len() {
         match rxResult.recv_timeout(timeout) {
             Ok(message) => println!("{}", message),
             Err(_) => println!("Worker timeout"),
